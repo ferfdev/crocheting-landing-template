@@ -1,0 +1,87 @@
+:root {
+  --levender-light: #dac4f7;
+  --green-light: #d4e09b;
+  --rose: #f65284;
+  --red: red;
+}
+
+.footer-home {
+  background-color: var(--rose);
+  color: white;
+  padding: 2rem;
+}
+
+.footer-home > h2 {
+  font-size: 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 25% 25% 50%;
+}
+
+.btn {
+  min-width: fit-content;
+}
+
+.mailform > .input-button > #email {
+  border: none;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: inherit;
+  padding-left: 0.5rem;
+  width: 50%;
+}
+
+.input-button {
+  display: flex;
+  position: relative;
+}
+
+.mailform {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#agree-age:focus {
+  background-color: lightcoral;
+}
+
+.lbl-change {
+  animation: lbl 2s ease-in-out forwards;
+}
+
+@keyframes lbl {
+  20% {
+    color: red;
+  }
+
+  80% {
+    color: white;
+  }
+}
+
+@media (max-width: 648px) {
+  .footer-content {
+    grid-template-columns: 70% 30%;
+    margin-bottom: 5vh;
+    row-gap: 2rem;
+  }
+
+  .mailform > .input-button > #email {
+    border: none;
+    text-decoration: none;
+    font-size: 0.5rem;
+    font-family: inherit;
+    padding-left: 0.5rem;
+  }
+
+  .input-button > .btn {
+    font-size: 0.7rem;
+  }
+
+  .mailform {
+    font-size: 0.7rem;
+  }
+}

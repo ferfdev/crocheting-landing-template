@@ -1,0 +1,154 @@
+:root {
+  --white: white;
+  --pink: #f65284;
+  --right-desc: 4rem;
+  --col-padding: 3rem;
+}
+
+.container {
+  background-color: var(--pink);
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  overflow-wrap: normal;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.col {
+  background-color: var(--pink);
+  align-content: center;
+  justify-items: center;
+}
+
+.logo-container {
+  display: flex;
+}
+
+.logo-container__logo {
+  height: 100%;
+  width: 90%;
+  object-fit: cover;
+}
+
+.right-desc {
+  text-align: center;
+}
+
+.col p {
+  color: white;
+  font-size: var(--right-desc);
+  font-weight: bold;
+  letter-spacing: 5px;
+  position: relative;
+}
+
+#ball {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+}
+.col p > span {
+  opacity: 0;
+}
+
+#hi {
+  animation: rina-appears 0.3s linear 0.6s forwards;
+}
+
+#im {
+  animation: rina-appears 0.3s linear 1.2s forwards;
+}
+
+#rina {
+  font-size: calc(var(--right-desc) + 1rem);
+  animation: rina-appears 0.3s linear 1.8s forwards;
+}
+
+.image {
+  text-align: center;
+}
+
+.image img {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: image-appears 0.5s linear 2.4s forwards;
+  margin: auto;
+  z-index: 0;
+}
+
+.left-desc {
+  background-color: transparent;
+}
+
+.description {
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  font-style: italic;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: description-appears 0.5s linear 2.4s forwards;
+  text-align: center;
+}
+
+#arrow-down {
+  transition: 0.7s ease-out;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#arrow-down:hover {
+  transform: translateY(10px);
+}
+
+@keyframes rina-appears {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes description-appears {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes image-appears {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1125px) {
+  .container {
+    padding: 0rem 5vw;
+  }
+}
+
+@media (max-width: 936px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-desc {
+    margin-top: 15vh;
+    text-align: center;
+    padding: 0;
+  }
+
+  .logo-container__logo {
+    height: 50%;
+    width: 40%;
+    object-fit: contain;
+  }
+
+  .right-desc {
+    display: flex;
+    align-items: center;
+  }
+}

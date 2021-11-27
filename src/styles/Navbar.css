@@ -1,0 +1,133 @@
+:root {
+  --pink: rgb(246, 82, 132);
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+  padding: 0.2rem;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  color: var(--pink);
+  align-items: stretch;
+}
+
+li {
+  list-style-type: none;
+}
+
+.navbar {
+  font-size: 1.1rem;
+  background-color: white;
+  display: flex;
+  align-items: stretch;
+  align-content: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.underline {
+  height: 0.12rem;
+  background-color: var(--pink);
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content {
+  color: var(--pink);
+  position: absolute;
+  left: 0;
+  top: calc(100% - 0.8rem);
+  background-color: white;
+  padding: 0.75rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out,
+    visibility 150ms ease-in-out;
+  visibility: hidden;
+}
+
+li:hover > .underline {
+  opacity: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dropdown-content:hover {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-left: auto;
+  gap: 1vw;
+}
+
+@media (min-width: 648px) {
+  #nav-foot {
+    display: none;
+  }
+}
+
+@media (max-width: 648px) {
+  #nav-top > .menu {
+    display: none;
+  }
+  #nav-foot {
+    font-size: 0.7rem;
+  }
+  li {
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
+  .menu {
+    gap: 0;
+  }
+  .dropdown-content {
+    display: none;
+  }
+  .dropdown:hover .dropdown-content {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dropdown-content:hover {
+    visibility: hidden;
+  }
+  li:hover > .underline {
+    opacity: 0;
+  }
+}
